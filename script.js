@@ -1,3 +1,4 @@
+//ARRAY
 const ourTeam = [
     {
         name: "Wayne Barnett",
@@ -48,6 +49,23 @@ function addCard(name, role, url){
     document.querySelector(".team-container").append(card);
 }
 
+//ciclo con il quale tutti gli oggetti dell'array vengono aggiunti come card nell'html
 for (let index = 0; index < ourTeam.length; index++) {
     addCard(ourTeam[index].name,ourTeam[index].role,ourTeam[index].img);    
 }
+
+document.getElementById("addMemberButton").addEventListener('click', function(){
+    const name = document.getElementById("name").value;
+    const role = document.getElementById("role").value;
+    const img = document.getElementById("image").value;
+    const member = {
+        name: name,
+        role: role,
+        img: img,
+    }
+    ourTeam.push(member);
+    document.querySelector(".team-container").innerHTML='';
+    for (let index = 0; index < ourTeam.length; index++) {
+        addCard(ourTeam[index].name,ourTeam[index].role,ourTeam[index].img);    
+    }
+});
