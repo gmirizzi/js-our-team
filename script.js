@@ -68,4 +68,7 @@ document.getElementById("addMemberButton").addEventListener('click', function(){
     for (let index = 0; index < ourTeam.length; index++) {
         addCard(ourTeam[index].name,ourTeam[index].role,ourTeam[index].img);    
     }
+    document.getElementById("name").value='';
+    document.getElementById("role").value='';
+    document.getElementById("image").value='';
 });
